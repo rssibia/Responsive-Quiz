@@ -1,0 +1,90 @@
+<!--
+The following HTML document is a simple and short Quiz app.
+The HTML document itself contains only the template where the quiz questions will be displayed. 
+All javascripts and css are separate from the HTML document.
+-->
+<html>
+    <head>
+	<!--Author:Randeep Singh Sibia-->
+        <title>JavaScript Quiz App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="style.css">
+       
+    </head>
+    <body onload="getQuestionCard()";>
+        <div id="quizScreen">
+		<center>
+		<div><h1>Quiz</h1></div>
+		<div><p id="questionIndex">Question x of y</p></div>
+		<div id="progressBar">
+                <table>
+                    <tr>
+					<td id="question1"></td><td id="question2"></td><td id="question3"></td><td id="question4"></td><td id="question5"></td>
+					</tr>
+                </table>
+            </div>
+           <div id="questionCard">
+                <p id='score'></p>
+                <fieldset id="quizFieldset">
+                    <legend id="eachQuestionCard"></legend>
+                    <form>
+                        <table>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="answers" value="a" id="guess1" checked><label></label><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="answers" value="b" id="guess2"><label></label><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="answers" value="c" id="guess3"><label></label><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="radio" name="answers" value="d" id="guess4"><label></label>
+                                </td>
+							</tr>
+							<tr>
+                                <td>
+                                    <input type="text" name="guess5"  id="guess5" style="display:none;"><label></label>
+                                </td>
+							</tr>
+                        </table>
+						
+                    </form>
+                </fieldset>
+                <button onclick="checkAnswer();" id="saveAnswer">Save</button>
+                <button onclick="getQuestionCard();" id="nextQuestion">Next</button>
+                <button type=button id="restart" onClick="history.go()">Restart</button>
+                <button onclick="helpfunc();" id="help">Help</button>
+				<button onclick="getFeedback();" id="checkScore" style="display:none;">Check Score</button>
+				 
+            </div>
+        </div>
+		
+		
+		
+        <div id="helpScreen">
+            <h2 style="text-align:center;">Instructions:</h2>
+            <p>&nbsp&nbsp1) To save your answers press the "Save" button. When you press the "Save" button a screen will<br>
+			   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp appear which will give you immediate feedback whether the answer was coreect or incorrect<br> 
+            <br>
+            &nbsp&nbsp2) To get new question card click the "Next" button. Which you can press only after saving your answer.<br>
+            <br>
+            &nbsp&nbsp3) You can immediately see your progress with the help og progress bar at top of the screen.<br>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspThe green bar means question was correct and vice versa.<br>
+            <br>
+            &nbsp&nbsp4) To return to the quiz app press the "Continue Quiz" button on the bottom of instructions page.
+            </p>
+            <button onclick="returnQuizApp();" id="continueQuiz">Continue Quiz</button>
+        </div>
+		<script type="text/javascript" src="layout.js"></script>
+    </body>
+    
+</html>
